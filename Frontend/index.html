@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Quiz Application</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container" id="main-container">
+    <h2 class="app-title">Dynamic Quiz Application</h2>
+
+    <div id="start-screen">
+        <button class="primary-btn" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+        <p id="timer">⏱ Time Left: <span id="time">10</span>s</p>
+
+        <div class="question-box">
+            <h3 id="question"></h3>
+        </div>
+
+        <div id="options" class="options-box"></div>
+
+        <button class="primary-btn" onclick="nextQuestion()">Next</button>
+    </div>
+</div>
+
+<!-- RESULT + ANALYTICS (FULL WIDTH) -->
+<div id="result-screen" class="hidden full-width">
+
+    <h3 id="score"></h3>
+    <p id="analysis"></p>
+
+    <div class="charts-row">
+        <div class="chart-box">
+            <h4>Time Spent per Question</h4>
+            <canvas id="timeChart"></canvas>
+        </div>
+
+        <div class="chart-box">
+            <h4>Correct vs Wrong Answers</h4>
+            <canvas id="resultChart"></canvas>
+        </div>
+
+        <div class="chart-box">
+            <h4>Overall Performance</h4>
+            <canvas id="performanceChart"></canvas>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
